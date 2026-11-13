@@ -5,5 +5,14 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello World!")
+	// No Im not a lisp user but I like chaos
+	fmt.Println(
+		string(
+			genHTML(
+				readFile(
+					handleArgs(),
+				),
+			),
+		),
+	)
 }
