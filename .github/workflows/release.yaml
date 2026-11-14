@@ -10,15 +10,19 @@ permissions:
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
-      GOOS_LIST: "linux windows darwin freebsd openbsd netbsd"
-      GOARCH_LIST: "amd64"
-      CGO_ENABLED: "0"
+      GOOS: "linux"
+      GOARCH: "amd64"
 
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+
+      - name: Install webkit2gtk and libgtk-3-0
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libgtk-3-0
 
       - name: Setup Go
         uses: actions/setup-go@v7
@@ -26,24 +30,15 @@ jobs:
           go-version-file: go.mod
           cache: true
 
-      - name: Compile binaries
+      - name: Compile binary
         env:
           TAG: ${{ github.ref_name }}
         run: |
           mkdir -p build
-          for os in $GOOS_LIST; do
-            for arch in $GOARCH_LIST; do
-              output="build/mdv-${TAG}-${os}-${arch}"
-              if [ "$os" = "windows" ]; then
-                output="${output}.exe"
-              fi
-
-              GOOS="$os" GOARCH="$arch" go build \
-                -o "$output" \
-                -ldflags="-s -w" \
-                .
-            done
-          done
+          go build \
+            -o "build/mdv-${TAG}-${GOOS}-${GOARCH}" \
+            -ldflags="-s -w" \
+            .
 
       - name: Create release
         env:
