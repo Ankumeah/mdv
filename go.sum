@@ -1,2 +1,4 @@
+github.com/Ankumeah/webview_go v0.0.0-20261114210016-ac21ea627cd0 h1:r6/FDpefc2qa3X4HAhdnMnwm3gRug6Jqy4DOp5fJZJM=
+github.com/Ankumeah/webview_go v0.0.0-20261114210016-ac21ea627cd0/go.mod h1:WHgeLJKgA2P/TboCicxl09hL6C3AuI6mCoQfcHyalMQ=
 github.com/gomarkdown/markdown v0.0.0-20261109103609-13f93121d67a h1:n7i8OLINsIqE6S6ZpXgcVVEx69+6GB8lst/sKV1kLhU=
 github.com/gomarkdown/markdown v0.0.0-20261109103609-13f93121d67a/go.mod h1:zLCvXLlUnS5tvOi4hpJgzzpJsq0+dliwn85VbPh1JbQ=

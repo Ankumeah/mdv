@@ -1,13 +1,12 @@
 default: run
 
-run *opts:
-  CGO_ENABLED=0 \
+run file = "README.md":
   go build \
     -ldflags='-s -w' \
     -o mdv \
     .
 
-  ./mdv {{ opts }}
+  ./mdv {{ file }}
 
 ci:
   ./.ci.sh

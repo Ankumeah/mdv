@@ -7,11 +7,16 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ ubuntu-22.04 ]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+
+      - name: Install webkit2gtk
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.0-37
 
       - name: Set up go
         uses: actions/setup-go@v7

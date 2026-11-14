@@ -5,7 +5,6 @@ import (
 	"io"
 	"os"
 
-	"github.com/gomarkdown/markdown"
 	"github.com/gomarkdown/markdown/html"
 	"github.com/gomarkdown/markdown/parser"
 )
@@ -26,19 +25,6 @@ func joinFlags() html.Flags {
 	}
 
 	return flag
-}
-
-func genHTML(md []byte) []byte {
-	return markdown.Render(
-		parser.NewWithExtensions(
-			joinExtensions(),
-		).Parse(md),
-		html.NewRenderer(
-			html.RendererOptions{
-				Flags: joinFlags(),
-			},
-		),
-	)
 }
 
 func readFile(file string) []byte {

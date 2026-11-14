@@ -14,6 +14,5 @@ var parserExtensions = []parser.Extensions{
 
 var htmlFlags = []html.Flags{
 	html.SkipHTML,
-	html.HrefTargetBlank,
 	html.CompletePage,
 }
