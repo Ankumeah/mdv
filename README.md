@@ -10,8 +10,6 @@ go build \
   -o mdv \
   .
 ```
-[test2](../pkgeep/logo_640x640.png)
-[test](./go.mod)
 
 ## I want to contribute
 Sure go ahead, but follow these rules
