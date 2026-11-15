@@ -1,6 +1,6 @@
 default: run
 
-run file = "README.md":
+run file = "example.md":
   go build \
     -ldflags='-s -w' \
     -o mdv \

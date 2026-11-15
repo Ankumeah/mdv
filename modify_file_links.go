@@ -50,6 +50,8 @@ func modifyFileLinks(mdFile string, root ast.Node) ast.Node {
 		func(node ast.Node, entering bool) ast.WalkStatus {
 			if link, ok := node.(*ast.Link); ok && entering && isLocalFile(link.Destination) {
 				link.Destination = getLocalFileData(mdFile, link.Destination)
+			} else if img, ok := node.(*ast.Image); ok && entering && isLocalFile(img.Destination) {
+				img.Destination = getLocalFileData(mdFile, img.Destination)
 			}
 
 			return ast.GoToNext
