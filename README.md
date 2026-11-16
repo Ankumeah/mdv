@@ -13,6 +13,18 @@ go build \
   .
 ```
 
+## Usage
+```text
+mdv: No BS, minimal markdown viewer
+
+Usage: mdv [FILE]
+```
+
+## What to use a markdown extension that is not enabled?
+Check out [./extend.go](./extend.go) to add extensions supported by [gomarkdown/markdown](github.com/gomarkdown/markdown)
+
+It also lets you directly manuplate the AST but at that point you are better of forking the repo
+
 ## I want to contribute
 Sure go ahead, but follow these rules
 
