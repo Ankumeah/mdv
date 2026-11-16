@@ -1,5 +1,7 @@
 # mdv (Markdown Viewer)
 
+![logo](./logo.png)
+
 Minimal no BS markdown viewer, written in [Golang](https://go.dev).
 Inspired by [imv](https://git.sr.ht/~exec64/imv)
 
