@@ -36,7 +36,7 @@ func getLocalFileData(mdFile string, uri []byte) []byte {
 		os.Exit(1)
 	}
 
-	data := readFile(path)
+	data := readFile(path, false)
 
 	dataType := http.DetectContentType(data)
 	encodedData := base64.StdEncoding.EncodeToString(data)

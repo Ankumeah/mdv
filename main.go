@@ -8,7 +8,7 @@ import (
 
 func main() {
 	file := handleArgs()
-	contents := readFile(file)
+	contents := readFile(file, true)
 
 	parser := parser.NewWithExtensions(joinExtensions()).Parse(contents)
 	doc := modifyFileLinks(file, parser)

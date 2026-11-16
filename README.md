@@ -21,7 +21,7 @@ Usage: mdv [FILE]
 ```
 
 ## What to use a markdown extension that is not enabled?
-Check out [./extend.go](./extend.go) to add extensions supported by [gomarkdown/markdown](github.com/gomarkdown/markdown)
+Check out [./extend.go](./extend.go) to add extensions supported by [gomarkdown/markdown](https://github.com/gomarkdown/markdown)
 
 It also lets you directly manuplate the AST but at that point you are better of forking the repo
 

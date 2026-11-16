@@ -27,18 +27,24 @@ func joinFlags() html.Flags {
 	return flag
 }
 
-func readFile(file string) []byte {
+func readFile(file string, exitOnError bool) []byte {
 	f, err := os.Open(file)
 	if err != nil {
 		fmt.Printf("Error opening file: %v\n", err)
-		os.Exit(1)
+		if exitOnError {
+			os.Exit(1)
+		}
+		return []byte("Invalid file")
 	}
 	defer f.Close()
 
 	content, err := io.ReadAll(f)
 	if err != nil {
 		fmt.Printf("Error reading file: %v\n", err)
-		os.Exit(1)
+		if exitOnError {
+			os.Exit(1)
+		}
+		return []byte("Invalid file")
 	}
 
 	return content
