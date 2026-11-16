@@ -20,7 +20,7 @@ Code block
 
 - List
 
-| Table |
-|-|
-| foo |
+| Table | Bar |
+|-|-|
+| foo | baz |
 

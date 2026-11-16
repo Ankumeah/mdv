@@ -15,6 +15,10 @@ const injectedCSS = `
   pre, code {
     background-color: #1f1f1f
   }
+
+  th, td {
+    border: 1px solid white;
+  }
 </style>
 `
 const injectedJS = `
