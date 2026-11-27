@@ -5,7 +5,20 @@
 Minimal no BS markdown viewer, written in [Golang](https://go.dev).
 Inspired by [imv](https://git.sr.ht/~exec64/imv)
 
+## Demo
+
+![Demo](./demo.png)
+
+### To run this demo yourself
+```sh
+./mdv README.md
+```
+
 ## Build
+> [!NOTE]
+> Make sure that go is installed.
+If not you might wanna check [this](https://go.dev/dl/) out
+
 ```sh
 go build \
   -ldflags='-s -w' \
